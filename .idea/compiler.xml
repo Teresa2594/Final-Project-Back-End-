@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="userInfoService" />
+        <module name="postInfoService" />
+        <module name="blogDataService" />
+        <module name="discovery-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="blogDataService" target="17" />
+      <module name="discovery-service" target="17" />
+      <module name="postInfoService" target="17" />
+      <module name="userInfoService" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="blogDataService" options="-parameters" />
+      <module name="discovery-service" options="-parameters" />
+      <module name="postInfoService" options="-parameters" />
+      <module name="userInfoService" options="-parameters" />
+    </option>
+  </component>
+</project>
