@@ -19,10 +19,12 @@ public class User {
 
     private String password;
 
+    private String imagen;
+
     public User() {
     }
 
-    public User(Integer id, String name, String username, String email, String address, String location, Integer age, String gender, String password) {
+    public User(Integer id, String name, String username, String email, String address, String location, Integer age, String gender, String password, String imagen) {
         setId(id);
         setName(name);
         setUsername(username);
@@ -32,6 +34,16 @@ public class User {
         setAge(age);
         setGender(gender);
         setPassword(password);
+        setImagen(imagen);
+
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 
     public Integer getId() {

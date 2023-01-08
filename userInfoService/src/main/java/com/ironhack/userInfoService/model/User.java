@@ -2,6 +2,8 @@ package com.ironhack.userInfoService.model;
 
 
 
+import lombok.Data;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -11,9 +13,12 @@ public class User {
     @Id
     private Integer id;
 
+
     private String name;
 
+
     private String username;
+
 
     private String email;
 
@@ -27,10 +32,12 @@ public class User {
 
     private String password;
 
+    private String imagen;
+
     public User() {
     }
 
-    public User(Integer id, String name, String username, String email, String address, String location, Integer age, String gender){
+    public User(Integer id, String name, String username, String email, String address, String location, Integer age, String gender,String imagen){
         setId(id);
         setName(name);
         setUsername(username);
@@ -40,6 +47,15 @@ public class User {
         setAge(age);
         setGender(gender);
         setPassword(password);
+        setImagen(imagen);
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 
     public String getPassword() {
