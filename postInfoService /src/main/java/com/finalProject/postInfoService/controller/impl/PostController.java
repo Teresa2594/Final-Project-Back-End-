@@ -53,7 +53,7 @@ public class PostController implements IPostController {
 
     //  ******************************************************  DELETE  ******************************************************
     @DeleteMapping("/posts/{id}")
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deletePost(@PathVariable Integer id) {
         postService.deletePost(id);
 
