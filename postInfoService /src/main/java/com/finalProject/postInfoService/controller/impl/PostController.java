@@ -54,6 +54,5 @@ public class PostController implements IPostController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deletePost(@PathVariable Integer id) {
         postService.deletePost(id);
-
     }
 }
