@@ -41,8 +41,6 @@ public class PostController implements IPostController {
         return postRepository.findByuserId(userId);
     }
 
-
-
     //  ******************************************************  POST  ******************************************************
     @PostMapping("/posts")
     @ResponseStatus(HttpStatus.CREATED)
