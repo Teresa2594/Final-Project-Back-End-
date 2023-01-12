@@ -1,4 +1,9 @@
-# Proyecto Final: *Backend*
+<h1 align="center">Proyecto Final: *Backend* </h1>
+
+
+
+<div align="center">
+<img alt="imagenPrincipal" src="https://www.hostinger.es/tutoriales/wp-content/uploads/sites/7/2019/02/what-is-a-blog.webp" width="600" height="300"/> </div>
 
 ## 1.Introducción
 En este proyecto final, más concretamente, para la parte Backend se ha decidido emplear un arquitectura de microservicios.
@@ -14,7 +19,7 @@ Se empezó el proyecto creando los tres servicios:
 a un autor concreto. Este servicio no tiene una base de datos propia, sino que se comunica con los dos anteriores para poder obtener 
 la información necesaria. 
 
-## 2.1 Servicios con base de datos propia
+### 2.1 Servicios con base de datos propia
 
 Como se ha explicado anteriormente, tenemos un total de dos servicios que acceden a una base de datos propia. Dentro de cada proyecto 
 se puede encontrar la misma estructura de carpetas basada en el patrón de modelo vista controlador (MVC)
@@ -31,7 +36,8 @@ y también del repositorio de los posts.
 
 A continuación se van a mostrar dos tablas que resumen la información de las rutas creadas en cada uno de los microservicios
 
- 
+ <br>
+
 #### RUTAS DEL SERVICIO *Post-info-Service* ####
 
 | Ruta | Tipo de petición | Parámetros | Descripción | 
@@ -42,6 +48,7 @@ A continuación se van a mostrar dos tablas que resumen la información de las r
 | /posts | POST | Objeto de la clase post | Realizar un nuevo post |
 | /posts/{id} | DELETE | Identificador del post  | Borrar un post mediante su identificador |
 
+<br>
 
 #### RUTAS DEL SERVICIO *User-info-Service* ####
 
@@ -53,7 +60,7 @@ A continuación se van a mostrar dos tablas que resumen la información de las r
 | /users/{id} | DELETE | Identificador del usuario  | Borrar un usuario mediante su identificador |
 
 
-## 2.2 Servicio sin base de datos 
+### 2.2 Servicio sin base de datos 
 En este último servicio se tiene la misma estructura de carpetas basada en el MVC, aunque se carece de repositorio, ya que al no
 tener base de datos es totalmente inecesario. 
 
@@ -70,6 +77,7 @@ de usuario, creando una lista de posts y asignándosela al usuario que se está 
 | Ruta | Tipo de petición | Parámetros | Descripción | 
 | --- | --- |  --- |  --- |
 | /blog/user/{id} | GET | Identificador del usuario | Muestra un usuario concreto con todos sus posts  |
+<br>
 
 
 ## 3. Discovery Service
@@ -85,6 +93,7 @@ las operaciones de mapeo de los dos servicios que se quieren consumir.
 ## 5. Resumen
 En este resumen final se muestra una tabla que permite al lector entender mejor como funciona la comunicación interna entre los servicios. Destacar
 que cada uno de ellos se ha levantado en un puerto diferente y se le ha asignado un nombre. 
+
 | Servicio | Puerto | Cliente/Servidor | Nombre de la aplicación | 
 | --- | --- |  --- |  --- |
 | Discovery Service | 8761 | Servidor | - |
@@ -92,4 +101,20 @@ que cada uno de ellos se ha levantado en un puerto diferente y se le ha asignado
 | User-info-Service | 8082 | Cliente | user-data-service |
 | Post-info-Service | 8083 | Cliente | post-data-service |
 
-## 6. Lenguajes de programación
+## 6. Herramientas empleadas
+Para el desarrollo de esta parte del proyecto se han empleado las siguientes herramientas:
+
+1. Java: lenguaje de programación
+2. IntelliJ: entorno de desarrollo
+3. GitHub: repositorio de todo el código del proyecto
+
+### 6.1 Clonar el repositorio
+A continuación se explica brevemente como clonar el repositorio situado en GitHub, con la finalidad
+de qué cualquier usuario se sienta libre de poder leer esta parte del proyecto con mayor detenimiento. 
+
+$ git clone https://github.com/Teresa2594/Final-Project-Back-End-.git
+
+## 7. Autores
+Teresa Mira Colomer 
+
+
