@@ -106,13 +106,17 @@ Para el desarrollo de esta parte del proyecto se han empleado las siguientes her
 
 1. Java: lenguaje de programación
 2. IntelliJ: entorno de desarrollo
+3. MySQL workbench: herramienta visual para las bases de datos
 3. GitHub: repositorio de todo el código del proyecto
 
 ### 6.1 Clonar el repositorio
-A continuación se explica brevemente como clonar el repositorio situado en GitHub, con la finalidad
-de qué cualquier usuario se sienta libre de poder leer esta parte del proyecto con mayor detenimiento. 
+A continuación se explica brevemente como clonar el repositorio situado en GitHub. 
 
 $ git clone https://github.com/Teresa2594/Final-Project-Back-End-.git
+
+Una vez se haya realizado este apartado, se recuerda al usuario que hay dos servicios
+conectados a bases de datos, se debe de considerar cambiar el usuario y la contraseña del MySQL, 
+y añadir datos a esta herramienta a fin de poder comprobar el funcionamiento. 
 
 ## 7. Autores
 Teresa Mira Colomer 
