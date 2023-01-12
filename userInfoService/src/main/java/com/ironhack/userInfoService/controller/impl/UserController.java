@@ -31,7 +31,7 @@ public class UserController implements IUserController {
 
     @GetMapping("/users/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public User getUserInfo (@PathVariable Integer id){
+    public User getUserInfo(@PathVariable Long id) {
         return usersRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
     }
 
@@ -47,7 +47,7 @@ public class UserController implements IUserController {
 
     @DeleteMapping("/users/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteUser(@PathVariable Integer id) {
+    public void deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);
     }
 }

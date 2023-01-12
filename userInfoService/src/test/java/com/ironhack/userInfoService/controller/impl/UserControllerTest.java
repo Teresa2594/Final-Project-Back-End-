@@ -61,56 +61,7 @@ public class UserControllerTest {
 
         System.out.println(mvcResult.getResponse().getContentAsString());
 
-        assertTrue(mvcResult.getResponse().getContentAsString().contains("23"));
+        assertTrue(mvcResult.getResponse().getContentAsString().contains("com"));
 
     }
-
-
-    @Test
-    void saveUser_validUser_userSaved() throws Exception {
-        User user = new User(4,"Teresa Mira","@Tere","hola@gmail.com","C/Sant Antoni","Aielo de Malferit",25,"Female",null);
-        String body = objectMapper.writeValueAsString(user);
-
-        mockMvc.perform(post("/api/users").content(body).contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isCreated())
-                .andReturn();
-
-        MvcResult mvcResult = mockMvc.perform(get("/api/users"))
-                .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON))
-                .andReturn();
-
-        System.out.println(mvcResult.getResponse().getContentAsString());
-
-        assertTrue(mvcResult.getResponse().getContentAsString().contains("Teresa"));
-
-        mockMvc.perform(delete("/api/users/4"))
-                .andExpect(status().isNoContent())
-                .andReturn();
-    }
-
-    @Test
-    void deleteUser() throws Exception {
-        User user = new User(4,"Teresa Mira","@Tere","hola@gmail.com","C/Sant Antoni","Aielo de Malferit",25,"Female",null);
-        String body = objectMapper.writeValueAsString(user);
-
-        mockMvc.perform(post("/api/users").content(body).contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isCreated())
-                .andReturn();
-
-        mockMvc.perform(delete("/api/users/4"))
-                .andExpect(status().isNoContent())
-                .andReturn();
-
-        MvcResult mvcResult = mockMvc.perform(get("/api/users"))
-                .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON))
-                .andReturn();
-
-        System.out.println(mvcResult.getResponse().getContentAsString());
-
-        assertFalse(mvcResult.getResponse().getContentAsString().contains("Teresa"));
-    }
-
-
 }

@@ -31,13 +31,13 @@ public class PostController implements IPostController {
 
     @GetMapping("/posts/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Post getPostInfo(@PathVariable Integer id){
+    public Post getPostInfo(@PathVariable Integer id) {
         return postRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Post not found"));
     }
 
     @GetMapping("/postsUser/{userId}")
     @ResponseStatus(HttpStatus.OK)
-    public List<Post> getPostByUserId(@PathVariable Integer userId) {
+    public List<Post> getPostByUserId(@PathVariable Long userId) {
         return postRepository.findByuserId(userId);
     }
 

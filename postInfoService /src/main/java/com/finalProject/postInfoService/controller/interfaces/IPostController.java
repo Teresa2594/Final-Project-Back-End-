@@ -8,11 +8,14 @@ public interface IPostController {
 
     //  ******************************************************  GET  ******************************************************
     List<Post> getAllPosts();
+
     Post getPostInfo(Integer id);
 
-    List<Post> getPostByUserId(Integer userId);
+    List<Post> getPostByUserId(Long userId);
+
     //  *****************************************************  POST  ******************************************************
     void savePost(Post post);
+
     //  *****************************************************  DELETE  ******************************************************
     void deletePost(Integer id);
 }

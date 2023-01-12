@@ -10,7 +10,7 @@ public interface IUserController {
 
     List<User> getAllUsers();
 
-    User getUserInfo(Integer id);
+    User getUserInfo(Long id);
 
     //  *****************************************************  POST  ******************************************************
 
@@ -18,6 +18,6 @@ public interface IUserController {
 
     //  *****************************************************  POST  ******************************************************
 
-    void deleteUser(Integer id);
+    void deleteUser(Long id);
 
 }

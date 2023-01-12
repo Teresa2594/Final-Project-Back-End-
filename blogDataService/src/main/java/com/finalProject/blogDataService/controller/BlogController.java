@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api")
 public class BlogController {
 
-   @Autowired
-   private BlogService blogService;
+    @Autowired
+    private BlogService blogService;
 
-   @GetMapping("/blog/user/{id}")
-   @ResponseStatus(HttpStatus.OK)
-   public Blog getBlog(@PathVariable Integer id){
-     return blogService.getBlog(id);
+    @GetMapping("/blog/user/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Blog getBlog(@PathVariable Long id) {
+        return blogService.getBlog(id);
 
-   }
+    }
 
 }

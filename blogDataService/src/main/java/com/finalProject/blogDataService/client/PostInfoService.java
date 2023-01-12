@@ -22,6 +22,6 @@ public interface PostInfoService {
 
     @GetMapping("api/postsUser/{userId}")
     @ResponseStatus(HttpStatus.OK)
-    List<Post> getPostByUserId(@PathVariable Integer userId);
+    List<Post> getPostByUserId(@PathVariable Long userId);
 
 }

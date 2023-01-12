@@ -24,8 +24,8 @@ public class BlogService implements IBlogService {
     @Autowired
     UserInfoService userInfoService;
 
-    public Blog getBlog(Integer id) {
-        User user =  userInfoService.getUserInfo(id);
+    public Blog getBlog(Long id) {
+        User user = userInfoService.getUserInfo(id);
         List<Post> postList = postInfoService.getPostByUserId(id);
         Blog blog = new Blog();
         blog.setUser(user);

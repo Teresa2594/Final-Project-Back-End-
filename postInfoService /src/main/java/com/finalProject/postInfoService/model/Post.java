@@ -1,7 +1,6 @@
 package com.finalProject.postInfoService.model;
 
 
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,7 +15,7 @@ public class Post {
     private LocalDate date;
     private String section;
 
-    private Integer userId;
+    private Long userId;
 
     private String description;
 
@@ -25,7 +24,7 @@ public class Post {
     public Post() {
     }
 
-    public Post(Integer id, String title, LocalDate date, String section, Integer userId, String description, String urlImagen) {
+    public Post(Integer id, String title, LocalDate date, String section, Long userId, String description, String urlImagen) {
         setId(id);
         setTitle(title);
         setDate(date);
@@ -48,7 +47,7 @@ public class Post {
     }
 
     public void setSection(String section) {
-        this.section=section;
+        this.section = section;
     }
 
     public Integer getId() {
@@ -68,11 +67,11 @@ public class Post {
         return date;
     }
 
-    public Integer getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 

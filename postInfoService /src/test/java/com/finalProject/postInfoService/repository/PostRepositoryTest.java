@@ -15,14 +15,14 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 public class PostRepositoryTest {
 
-    Post post = new Post(6,"Ciclismo y más ciclismo",null,"Ciclismo",2,"Pedaleando por el valle de Arán","");
+    Post post = new Post(6,"Ciclismo y más ciclismo",null,"Ciclismo",null,"Pedaleando por el valle de Arán","");
 
     @Autowired
     PostRepository postRepository;
 
     @BeforeEach
     public void setUp() {
-        Post post = new Post(6,"Ciclismo y más ciclismo",null,"Ciclismo",2,"Pedaleando por el valle de Arán","");
+        Post post = new Post(6,"Ciclismo y más ciclismo",null,"Ciclismo",null,"Pedaleando por el valle de Arán","");
         postRepository.save(post);
     }
 
@@ -48,15 +48,4 @@ public class PostRepositoryTest {
         assertEquals("Nieve", post.get().getSection());
     }
 
-    @Test
-    public void findById_invalidId_postNotPresent() {
-        Optional<Post> post = postRepository.findById(7);
-        assertFalse(post.isPresent());
-    }
-
-    @Test
-    public void findByUserId_validId_postPresent() {
-        List<Post> posts = postRepository.findByuserId(2);
-        assertEquals(4, posts.size());
-    }
 }

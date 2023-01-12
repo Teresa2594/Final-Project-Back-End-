@@ -1,132 +1,40 @@
 package com.ironhack.userInfoService.model;
 
 
-
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+import java.util.ArrayList;
+import java.util.Collection;
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
-
     @Id
-    private Integer id;
-
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @NotEmpty(message = "Provide a name.")
     private String name;
-
-
-    private String username;
-
-
+    @Pattern(regexp = "[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\."
+            + "[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*@"
+            + "(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\\.)+[A-Za-z0-9]"
+            + "(?:[A-Za-z0-9-]*[A-Za-z0-9])?",
+            message = "Provide a valid email address.")
     private String email;
 
-    private String address;
-
-    private String location;
-
-    private Integer age;
-
-    private String gender;
-
     private String password;
+    @ManyToMany(fetch = FetchType.EAGER)
+    private Collection<Role> roles = new ArrayList<>();
 
-    private String imagen;
-
-    public User() {
-    }
-
-    public User(Integer id, String name, String username, String email, String address, String location, Integer age, String gender,String imagen){
-        setId(id);
-        setName(name);
-        setUsername(username);
-        setEmail(email);
-        setAddress(address);
-        setLocation(location);
-        setAge(age);
-        setGender(gender);
-        setPassword(password);
-        setImagen(imagen);
-    }
-
-    public String getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+    public User(String name, String email, String password) {
         this.name = name;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
+        this.password = password;
     }
 }

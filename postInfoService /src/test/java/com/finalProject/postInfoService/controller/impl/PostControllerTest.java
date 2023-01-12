@@ -74,13 +74,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
         System.out.println(mvcResult.getResponse().getContentAsString());
 
-        assertTrue(mvcResult.getResponse().getContentAsString().contains("Nieve"));
+        assertTrue(mvcResult.getResponse().getContentAsString().contains("Subida"));
     }
 
     @Test
     void savePost_validPost_postSaved() throws Exception {
 
-        Post post = new Post(6,"Ciclismo y más ciclismo",null,"Ciclismo",2,"Pedaleando por el valle de Arán","");
+        Post post = new Post(6,"Ciclismo y más ciclismo",null,"Ciclismo",null,"Pedaleando por el valle de Arán","");
 
         String body = objectMapper.writeValueAsString(post);
 
@@ -104,7 +104,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
     @Test
     void deletePost() throws Exception {
-        Post post = new Post(6,"Ciclismo y más ciclismo",null,"Ciclismo",2,"Pedaleando por el valle de Arán","");
+        Post post = new Post(6,"Ciclismo y más ciclismo",null,"Ciclismo",null,"Pedaleando por el valle de Arán","");
         String body = objectMapper.writeValueAsString(post);
 
         mockMvc.perform(post("/api/posts").content(body).contentType(MediaType.APPLICATION_JSON))

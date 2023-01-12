@@ -5,9 +5,10 @@ import com.ironhack.userInfoService.model.User;
 import java.util.List;
 
 public interface IUserService {
-    void saveUser(User user);
+    User saveUser(User userSignupDTO);
 
-    void deleteUser(Integer id);
+    void deleteUser(Long id);
 
+    List<User> getUsers();
 
 }

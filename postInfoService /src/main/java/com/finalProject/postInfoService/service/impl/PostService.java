@@ -15,6 +15,7 @@ public class PostService implements IPostService {
 
     @Autowired
     PostRepository postRepository;
+
     public void savePost(Post post) {
         postRepository.save(post);
     }
