@@ -18,12 +18,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 public class BlogDataServiceApplication {
 
-    @Bean
-    @LoadBalanced
-    public RestTemplate getRestTemplate() {
-        return new RestTemplate();
-    }
-
     public static void main(String[] args) {
         SpringApplication.run(BlogDataServiceApplication.class, args);
     }
