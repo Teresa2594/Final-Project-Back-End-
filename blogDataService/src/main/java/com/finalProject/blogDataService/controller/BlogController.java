@@ -20,7 +20,5 @@ public class BlogController {
     @ResponseStatus(HttpStatus.OK)
     public Blog getBlog(@PathVariable Long id) {
         return blogService.getBlog(id);
-
     }
-
 }
